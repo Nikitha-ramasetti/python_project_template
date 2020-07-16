@@ -12,10 +12,9 @@ import re
 from collections import Callable
 from functools import partial
 
+from pockets import UnicodeMixin, modify_iter
 from six import string_types, u
 from six.moves import range
-
-from pockets import modify_iter, UnicodeMixin
 from sphinxcontrib.napoleon._upstream import _
 
 if False:

@@ -1,4 +1,4 @@
-def func(param1=True, param2='default val'):
+def func(param1=True, param2="default val"):
     """Description of func with docstring groups style (Googledoc).
 
     Parameters
@@ -23,8 +23,10 @@ def func(param1=True, param2='default val'):
     """
     pass
 
+
 class A:
     """ """
+
     def method(self, param1, param2=None):
         """
 

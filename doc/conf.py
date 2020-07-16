@@ -32,7 +32,7 @@ print("TEMPLATE version: ", TEMPLATE.__version__)
 # ones.
 extensions = [
     "recommonmark",
-    "sphinxcontrib.napoleon",
+    "sphinx.ext.napoleon",
     "sphinx.ext.autodoc",
     "sphinx.ext.coverage",
     "sphinx.ext.autosummary",
@@ -54,9 +54,9 @@ templates_path = ["_templates"]
 
 # The suffix of source filenames.
 source_suffix = {
-    '.rst': 'restructuredtext',
-    '.txt': 'markdown',
-    '.md': 'markdown',
+    ".rst": "restructuredtext",
+    ".txt": "markdown",
+    ".md": "markdown",
 }
 
 
@@ -353,5 +353,3 @@ napoleon_use_param = True
 # If False, output the return type inline with the return description:
 #     :returns: *type* -- Description of return value.
 napoleon_use_rtype = True
-
-

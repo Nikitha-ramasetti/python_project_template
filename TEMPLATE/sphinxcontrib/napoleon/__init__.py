@@ -16,7 +16,6 @@ if False:
     from typing import Any, Dict, List  # NOQA
 
 
-
 class Config:
     """Sphinx napoleon extension settings in `conf.py`.
 
@@ -251,20 +250,21 @@ class Config:
 
 
     """
+
     _config_values = {
-        'napoleon_google_docstring': (False, 'env'),
-        'napoleon_numpy_docstring': (True, 'env'),
-        'napoleon_include_init_with_doc': (False, 'env'),
-        'napoleon_include_private_with_doc': (False, 'env'),
-        'napoleon_include_special_with_doc': (True, 'env'),
-        'napoleon_use_admonition_for_examples': (False, 'env'),
-        'napoleon_use_admonition_for_notes': (False, 'env'),
-        'napoleon_use_admonition_for_references': (False, 'env'),
-        'napoleon_use_ivar': (False, 'env'),
-        'napoleon_use_param': (True, 'env'),
-        'napoleon_use_rtype': (True, 'env'),
-        'napoleon_use_keyword': (True, 'env'),
-        'napoleon_custom_sections': (None, 'env')
+        "napoleon_google_docstring": (False, "env"),
+        "napoleon_numpy_docstring": (True, "env"),
+        "napoleon_include_init_with_doc": (False, "env"),
+        "napoleon_include_private_with_doc": (False, "env"),
+        "napoleon_include_special_with_doc": (True, "env"),
+        "napoleon_use_admonition_for_examples": (False, "env"),
+        "napoleon_use_admonition_for_notes": (False, "env"),
+        "napoleon_use_admonition_for_references": (False, "env"),
+        "napoleon_use_ivar": (False, "env"),
+        "napoleon_use_param": (True, "env"),
+        "napoleon_use_rtype": (True, "env"),
+        "napoleon_use_keyword": (True, "env"),
+        "napoleon_custom_sections": (None, "env"),
     }
 
     def __init__(self, **settings):
@@ -273,7 +273,6 @@ class Config:
             setattr(self, name, default)
         for name, value in settings.items():
             setattr(self, name, value)
-
 
 
 def setup(app):
@@ -296,20 +295,20 @@ def setup(app):
 
     """
     from sphinx.application import Sphinx
+
     if not isinstance(app, Sphinx):
         # probably called by tests
-        return {'version': __version__, 'parallel_read_safe': True}
+        return {"version": __version__, "parallel_read_safe": True}
 
     _patch_python_domain()
 
-    app.setup_extension('sphinx.ext.autodoc')
-    app.connect('autodoc-process-docstring', _process_docstring)
-    app.connect('autodoc-skip-member', _skip_member)
+    app.setup_extension("sphinx.ext.autodoc")
+    app.connect("autodoc-process-docstring", _process_docstring)
+    app.connect("autodoc-skip-member", _skip_member)
 
     for name, (default, rebuild) in Config._config_values.items():
         app.add_config_value(name, default, rebuild)
-    return {'version': __version__, 'parallel_read_safe': True}
-
+    return {"version": __version__, "parallel_read_safe": True}
 
 
 def _patch_python_domain():
@@ -321,15 +320,21 @@ def _patch_python_domain():
     else:
         import sphinx.domains.python
         from sphinx.locale import _
+
         for doc_field in sphinx.domains.python.PyObject.doc_field_types:
-            if doc_field.name == 'parameter':
-                doc_field.names = ('param', 'parameter', 'arg', 'argument')
+            if doc_field.name == "parameter":
+                doc_field.names = ("param", "parameter", "arg", "argument")
                 break
         sphinx.domains.python.PyObject.doc_field_types.append(
-            PyTypedField('keyword', label=_('Keyword Arguments'),
-                         names=('keyword', 'kwarg', 'kwparam'),
-                         typerolename='obj', typenames=('paramtype', 'kwtype'),
-                         can_collapse=True))
+            PyTypedField(
+                "keyword",
+                label=_("Keyword Arguments"),
+                names=("keyword", "kwarg", "kwparam"),
+                typerolename="obj",
+                typenames=("paramtype", "kwtype"),
+                can_collapse=True,
+            )
+        )
 
 
 def _process_docstring(app, what, name, obj, options, lines):
@@ -372,12 +377,14 @@ def _process_docstring(app, what, name, obj, options, lines):
     result_lines = lines
     docstring = None  # type: GoogleDocstring
     if app.config.napoleon_numpy_docstring:
-        docstring = NumpyDocstring(result_lines, app.config, app, what, name,
-                                   obj, options)
+        docstring = NumpyDocstring(
+            result_lines, app.config, app, what, name, obj, options
+        )
         result_lines = docstring.lines()
     if app.config.napoleon_google_docstring:
-        docstring = GoogleDocstring(result_lines, app.config, app, what, name,
-                                    obj, options)
+        docstring = GoogleDocstring(
+            result_lines, app.config, app, what, name, obj, options
+        )
         result_lines = docstring.lines()
     lines[:] = result_lines[:]
 
@@ -425,49 +432,52 @@ def _skip_member(app, what, name, obj, skip, options):
         False if it should be included in the docs.
 
     """
-    has_doc = getattr(obj, '__doc__', False)
-    is_member = (what == 'class' or what == 'exception' or what == 'module')
-    if name != '__weakref__' and has_doc and is_member:
+    has_doc = getattr(obj, "__doc__", False)
+    is_member = what == "class" or what == "exception" or what == "module"
+    if name != "__weakref__" and has_doc and is_member:
         cls_is_owner = False
         import six
-        if six.PY2 and (what == 'class' or what == 'exception'):
-            cls = getattr(obj, 'im_class', getattr(obj, '__objclass__',
-                          None))
-            cls_is_owner = (cls and hasattr(cls, name) and
-                            name in cls.__dict__)
-        elif what == 'class' or what == 'exception':
-            qualname = getattr(obj, '__qualname__', '')
-            cls_path, _, _ = qualname.rpartition('.')
+
+        if six.PY2 and (what == "class" or what == "exception"):
+            cls = getattr(obj, "im_class", getattr(obj, "__objclass__", None))
+            cls_is_owner = cls and hasattr(cls, name) and name in cls.__dict__
+        elif what == "class" or what == "exception":
+            qualname = getattr(obj, "__qualname__", "")
+            cls_path, _, _ = qualname.rpartition(".")
             if cls_path:
                 try:
-                    if '.' in cls_path:
+                    if "." in cls_path:
                         import importlib
                         import functools
 
                         mod = importlib.import_module(obj.__module__)
-                        mod_path = cls_path.split('.')
+                        mod_path = cls_path.split(".")
                         cls = functools.reduce(getattr, mod_path, mod)
                     else:
                         cls = obj.__globals__[cls_path]
                 except Exception:
                     cls_is_owner = False
                 else:
-                    cls_is_owner = (cls and hasattr(cls, name) and  # type: ignore
-                                    name in cls.__dict__)
+                    cls_is_owner = (
+                        cls
+                        and hasattr(cls, name)
+                        and name  # type: ignore
+                        in cls.__dict__
+                    )
             else:
                 cls_is_owner = False
 
-        if what == 'module' or cls_is_owner:
-            is_init = (name == '__init__')
-            is_special = (not is_init and name.startswith('__') and
-                          name.endswith('__'))
-            is_private = (not is_init and not is_special and
-                          name.startswith('_'))
+        if what == "module" or cls_is_owner:
+            is_init = name == "__init__"
+            is_special = not is_init and name.startswith("__") and name.endswith("__")
+            is_private = not is_init and not is_special and name.startswith("_")
             inc_init = app.config.napoleon_include_init_with_doc
             inc_special = app.config.napoleon_include_special_with_doc
             inc_private = app.config.napoleon_include_private_with_doc
-            if ((is_special and inc_special) or
-                    (is_private and inc_private) or
-                    (is_init and inc_init)):
+            if (
+                (is_special and inc_special)
+                or (is_private and inc_private)
+                or (is_init and inc_init)
+            ):
                 return False
     return None
