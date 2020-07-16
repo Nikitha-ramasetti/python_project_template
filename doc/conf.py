@@ -32,7 +32,7 @@ print("TEMPLATE version: ", TEMPLATE.__version__)
 # ones.
 extensions = [
     "recommonmark",
-    "sphinx.ext.napoleon",
+    "sphinxcontrib.napoleon",
     "sphinx.ext.autodoc",
     "sphinx.ext.coverage",
     "sphinx.ext.autosummary",
