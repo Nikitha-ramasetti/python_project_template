@@ -1,14 +1,14 @@
-on: [push]
-  branches: ['*']
+on:
+  push:
+    branches: ['*']
 
 jobs:
-  hello_world_job:
+  build:
     runs-on: ubuntu-latest
-    name: A job to say hello
     steps:
-      # To use this repository's private action,
-      # you must check out the repository
       - name: Checkout
         uses: actions/checkout@v2
-      - name: Hello world action step
-        run echo "Hello World"
+
+      - name: Setup conda environment
+        uses: goanpeca/setup-miniconda@v1
+        run: echo "Hello World"
