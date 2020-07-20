@@ -9,5 +9,5 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Setup conda environment
+      - name: Print Hello World
         run: echo "Hello World"
