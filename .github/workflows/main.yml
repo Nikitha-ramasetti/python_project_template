@@ -16,7 +16,10 @@ jobs:
 
 
       - name: Build docs
-        run: sphinx-build -W -n -j auto -b html -d build/doctrees doc build/html
+        uses: actions/checkout@v2
+        with:
+          docs-folder: "docs/"
+          build-command: "sphinx-build -b html . _build"
 
 
       - uses: actions/upload-artifact@v1
