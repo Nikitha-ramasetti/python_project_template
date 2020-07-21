@@ -1,4 +1,4 @@
-name: CI
+name: Hello World Workflow
 
 on:
   push:
@@ -13,3 +13,14 @@ jobs:
 
       - name: Print Hello World
         run: echo "Hello World"
+
+
+      - name: Build docs
+        shell: bash -l {0}
+        build-command: sphinx-build -W -n -j auto -b html -d build/doctrees doc build/html
+
+
+      - uses: actions/upload-artifact@v1
+        with:
+          name: TEMPLATE-docs
+          path: build/html
