@@ -18,8 +18,7 @@ jobs:
       - name: Build docs
         uses: actions/checkout@v2
         with:
-          docs-folder: "doc/"
-          build-command: "sphinx-build -W -n -j auto -b html"
+          build-command: "sphinx-build -W -n -j auto -b html -d build/doctrees doc build/html"
 
 
       - uses: actions/upload-artifact@v1
