@@ -1,4 +1,4 @@
-name: Hello World Workflow
+name: Sphinx Build
 
 on:
   push:
@@ -14,6 +14,18 @@ jobs:
       - name: Print Hello World
         run: echo "Hello World"
 
+      - name: Install Python
+        uses: actions/setup-python@v1
+        with:
+          python-version: 3.8
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Build Sphinx docs
+              run: |
+                make html
 
       - name: Build docs
         shell: bash -l {0}
