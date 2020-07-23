@@ -24,8 +24,8 @@ jobs:
           pip install -r requirements.txt
 
       - name: Build Sphinx docs
-              run: sphinx-build -W -n -j auto -b html -d build/doctrees doc build/html
-                make html
+        run: sphinx-build -W -n -j auto -b html -d build/doctrees doc build/html
+
 
 
       - uses: actions/upload-artifact@v1
