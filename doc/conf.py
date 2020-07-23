@@ -13,7 +13,7 @@ import datetime
 import os
 import sys
 
-# import TEMPLATE
+import TEMPLATE
 
 allowed_failures = set()
 
