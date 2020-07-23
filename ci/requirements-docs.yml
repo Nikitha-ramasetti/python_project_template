@@ -3,7 +3,7 @@ channels:
   - conda-forge
   - defaults
 dependencies:
-  - sphinx=2
+  - sphinx<3
   - sphinx_rtd_theme
   - sphinxcontrib-napoleon
   # TODO: add any dependencies needed to import the project modules
