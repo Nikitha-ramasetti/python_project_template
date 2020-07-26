@@ -44,7 +44,7 @@ jobs:
         run: sphinx-build -W -n -j auto -b html -d build/doctrees doc build/html
 
 
-      - uses: actions/upload-artifact@master
+      - uses: actions/upload-artifact@v1
         with:
           name: TEMPLATE-docs
           path: build/html
@@ -65,7 +65,7 @@ jobs:
         # The above command will fail if no changes were present, so we ignore
         # that.
       - name: Push changes
-        uses: ad-m/github-push-action@v1
+        uses: ad-m/github-push-action@master
         with:
           branch: gh-pages
           directory: gh-pages
