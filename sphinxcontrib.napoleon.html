@@ -1,0 +1,582 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>sphinxcontrib.napoleon &mdash; TEMPLATE 0.1.dev1+gf98106f documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="_static/style.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+        <script src="_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Markdown File" href="sample.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home" alt="Documentation Home"> TEMPLATE
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.1.dev1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="installing.html">Installation</a></li>
+<li class="toctree-l1"><a class="reference internal" href="whats-new.html">What’s New</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API Reference</a></li>
+<li class="toctree-l1"><a class="reference internal" href="helloworld.html">Hello World</a></li>
+<li class="toctree-l1"><a class="reference internal" href="sample.html">Markdown File</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">sphinxcontrib.napoleon</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">TEMPLATE</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>sphinxcontrib.napoleon</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="_sources/sphinxcontrib.napoleon.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="module-TEMPLATE.sphinxcontrib.napoleon"></span><div class="section" id="sphinxcontrib-napoleon">
+<h1>sphinxcontrib.napoleon<a class="headerlink" href="#sphinxcontrib-napoleon" title="Permalink to this headline">¶</a></h1>
+<p>Support for NumPy and Google style docstrings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">copyright</dt>
+<dd class="field-odd"><p>Copyright 2013-2018 by Rob Ruana, see AUTHORS.</p>
+</dd>
+<dt class="field-even">license</dt>
+<dd class="field-even"><p>BSD, see LICENSE for details.</p>
+</dd>
+</dl>
+<dl class="class">
+<dt id="TEMPLATE.sphinxcontrib.napoleon.Config">
+<em class="property">class </em><code class="sig-prename descclassname">TEMPLATE.sphinxcontrib.napoleon.</code><code class="sig-name descname">Config</code><span class="sig-paren">(</span><em class="sig-param">**settings</em><span class="sig-paren">)</span><a class="headerlink" href="#TEMPLATE.sphinxcontrib.napoleon.Config" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference external" href="https://docs.python.org/3/library/functions.html#object" title="(in Python v3.8)"><code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></a></p>
+<p>Sphinx napoleon extension settings in <cite>conf.py</cite>.</p>
+<p>Listed below are all the settings used by napoleon and their default
+values. These settings can be changed in the Sphinx <cite>conf.py</cite> file. Make
+sure that “sphinxcontrib.napoleon” is enabled in <cite>conf.py</cite>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="c1"># conf.py</span>
+
+<span class="c1"># Add any Sphinx extension module names here, as strings</span>
+<span class="n">extensions</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;sphinxcontrib.napoleon&#39;</span><span class="p">]</span>
+
+<span class="c1"># Napoleon settings</span>
+<span class="n">napoleon_google_docstring</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">napoleon_numpy_docstring</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">napoleon_include_init_with_doc</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">napoleon_include_private_with_doc</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">napoleon_include_special_with_doc</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">napoleon_use_admonition_for_examples</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">napoleon_use_admonition_for_notes</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">napoleon_use_admonition_for_references</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">napoleon_use_ivar</span> <span class="o">=</span> <span class="kc">False</span>
+<span class="n">napoleon_use_param</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">napoleon_use_rtype</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">napoleon_use_keyword</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="n">napoleon_custom_sections</span> <span class="o">=</span> <span class="kc">None</span>
+</pre></div>
+</div>
+<dl class="attribute">
+<dt id="TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_google_docstring">
+<code class="sig-name descname">napoleon_google_docstring</code><a class="headerlink" href="#TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_google_docstring" title="Permalink to this definition">¶</a></dt>
+<dd><p>True to parse <a class="reference external" href="https://google.github.io/styleguide/pyguide.html">Google style</a> docstrings. False to disable support
+for Google style docstrings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a> (Defaults to True)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_numpy_docstring">
+<code class="sig-name descname">napoleon_numpy_docstring</code><a class="headerlink" href="#TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_numpy_docstring" title="Permalink to this definition">¶</a></dt>
+<dd><p>True to parse <a class="reference external" href="https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt">NumPy style</a> docstrings. False to disable support
+for NumPy style docstrings.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a> (Defaults to True)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_include_init_with_doc">
+<code class="sig-name descname">napoleon_include_init_with_doc</code><a class="headerlink" href="#TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_include_init_with_doc" title="Permalink to this definition">¶</a></dt>
+<dd><p>True to list <code class="docutils literal notranslate"><span class="pre">__init___</span></code> docstrings separately from the class
+docstring. False to fall back to Sphinx’s default behavior, which
+considers the <code class="docutils literal notranslate"><span class="pre">__init___</span></code> docstring as part of the class
+documentation.</p>
+<p><strong>If True</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This will be included in the docs because it has a docstring</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+<span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># This will NOT be included in the docs</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a> (Defaults to False)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_include_private_with_doc">
+<code class="sig-name descname">napoleon_include_private_with_doc</code><a class="headerlink" href="#TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_include_private_with_doc" title="Permalink to this definition">¶</a></dt>
+<dd><p>True to include private members (like <code class="docutils literal notranslate"><span class="pre">_membername</span></code>) with docstrings
+in the documentation. False to fall back to Sphinx’s default behavior.</p>
+<p><strong>If True</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">_included</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This will be included in the docs because it has a docstring</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">pass</span>
+
+<span class="k">def</span> <span class="nf">_skipped</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># This will NOT be included in the docs</span>
+    <span class="k">pass</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a> (Defaults to False)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_include_special_with_doc">
+<code class="sig-name descname">napoleon_include_special_with_doc</code><a class="headerlink" href="#TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_include_special_with_doc" title="Permalink to this definition">¶</a></dt>
+<dd><p>True to include special members (like <code class="docutils literal notranslate"><span class="pre">__membername__</span></code>) with
+docstrings in the documentation. False to fall back to Sphinx’s
+default behavior.</p>
+<p><strong>If True</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">    This will be included in the docs because it has a docstring</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">return</span> <span class="n">unicode</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">__unicode__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="c1"># This will NOT be included in the docs</span>
+    <span class="k">return</span> <span class="n">unicode</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="vm">__class__</span><span class="o">.</span><span class="vm">__name__</span><span class="p">)</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a> (Defaults to False)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_use_admonition_for_examples">
+<code class="sig-name descname">napoleon_use_admonition_for_examples</code><a class="headerlink" href="#TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_use_admonition_for_examples" title="Permalink to this definition">¶</a></dt>
+<dd><p>True to use the <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">admonition::</span></code> directive for the <strong>Example</strong> and
+<strong>Examples</strong> sections. False to use the <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">rubric::</span></code> directive
+instead. One may look better than the other depending on what HTML
+theme is used.</p>
+<p>This <a class="reference external" href="https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt">NumPy style</a> snippet will be converted as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Example</span>
+<span class="o">-------</span>
+<span class="n">This</span> <span class="ow">is</span> <span class="n">just</span> <span class="n">a</span> <span class="n">quick</span> <span class="n">example</span>
+</pre></div>
+</div>
+<p><strong>If True</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">admonition</span><span class="p">::</span> <span class="n">Example</span>
+
+   <span class="n">This</span> <span class="ow">is</span> <span class="n">just</span> <span class="n">a</span> <span class="n">quick</span> <span class="n">example</span>
+</pre></div>
+</div>
+<p><strong>If False</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span> <span class="n">rubric</span><span class="p">::</span> <span class="n">Example</span>
+
+<span class="n">This</span> <span class="ow">is</span> <span class="n">just</span> <span class="n">a</span> <span class="n">quick</span> <span class="n">example</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a> (Defaults to False)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_use_admonition_for_notes">
+<code class="sig-name descname">napoleon_use_admonition_for_notes</code><a class="headerlink" href="#TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_use_admonition_for_notes" title="Permalink to this definition">¶</a></dt>
+<dd><p>True to use the <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">admonition::</span></code> directive for <strong>Notes</strong> sections.
+False to use the <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">rubric::</span></code> directive instead.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The singular <strong>Note</strong> section will always be converted to a
+<code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">note::</span></code> directive.</p>
+</div>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_use_admonition_for_examples" title="TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_use_admonition_for_examples"><code class="xref py py-attr docutils literal notranslate"><span class="pre">napoleon_use_admonition_for_examples</span></code></a></p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a> (Defaults to False)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_use_admonition_for_references">
+<code class="sig-name descname">napoleon_use_admonition_for_references</code><a class="headerlink" href="#TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_use_admonition_for_references" title="Permalink to this definition">¶</a></dt>
+<dd><p>True to use the <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">admonition::</span></code> directive for <strong>References</strong>
+sections. False to use the <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">rubric::</span></code> directive instead.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_use_admonition_for_examples" title="TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_use_admonition_for_examples"><code class="xref py py-attr docutils literal notranslate"><span class="pre">napoleon_use_admonition_for_examples</span></code></a></p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a> (Defaults to False)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_use_ivar">
+<code class="sig-name descname">napoleon_use_ivar</code><a class="headerlink" href="#TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_use_ivar" title="Permalink to this definition">¶</a></dt>
+<dd><p>True to use the <code class="docutils literal notranslate"><span class="pre">:ivar:</span></code> role for instance variables. False to use
+the <code class="docutils literal notranslate"><span class="pre">..</span> <span class="pre">attribute::</span></code> directive instead.</p>
+<p>This <a class="reference external" href="https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt">NumPy style</a> snippet will be converted as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Attributes
+----------
+attr1 : int
+    Description of `attr1`
+</pre></div>
+</div>
+<p><strong>If True</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:ivar attr1: Description of `attr1`
+:vartype attr1: int
+</pre></div>
+</div>
+<p><strong>If False</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>.. attribute:: attr1
+
+   Description of `attr1`
+
+   :type: int
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a> (Defaults to False)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_use_param">
+<code class="sig-name descname">napoleon_use_param</code><a class="headerlink" href="#TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_use_param" title="Permalink to this definition">¶</a></dt>
+<dd><p>True to use a <code class="docutils literal notranslate"><span class="pre">:param:</span></code> role for each function parameter. False to
+use a single <code class="docutils literal notranslate"><span class="pre">:parameters:</span></code> role for all the parameters.</p>
+<p>This <a class="reference external" href="https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt">NumPy style</a> snippet will be converted as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>Parameters
+----------
+arg1 : str
+    Description of `arg1`
+arg2 : int, optional
+    Description of `arg2`, defaults to 0
+</pre></div>
+</div>
+<p><strong>If True</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:param arg1: Description of `arg1`
+:type arg1: str
+:param arg2: Description of `arg2`, defaults to 0
+:type arg2: int, optional
+</pre></div>
+</div>
+<p><strong>If False</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>:parameters: * **arg1** (*str*) --
+               Description of `arg1`
+             * **arg2** (*int, optional*) --
+               Description of `arg2`, defaults to 0
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a> (Defaults to True)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_use_keyword">
+<code class="sig-name descname">napoleon_use_keyword</code><a class="headerlink" href="#TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_use_keyword" title="Permalink to this definition">¶</a></dt>
+<dd><p>True to use a <code class="docutils literal notranslate"><span class="pre">:keyword:</span></code> role for each function keyword argument.
+False to use a single <code class="docutils literal notranslate"><span class="pre">:keyword</span> <span class="pre">arguments:</span></code> role for all the
+keywords.</p>
+<p>This behaves similarly to  <a class="reference internal" href="#TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_use_param" title="TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_use_param"><code class="xref py py-attr docutils literal notranslate"><span class="pre">napoleon_use_param</span></code></a>. Note unlike
+docutils, <code class="docutils literal notranslate"><span class="pre">:keyword:</span></code> and <code class="docutils literal notranslate"><span class="pre">:param:</span></code> will not be treated the same
+way - there will be a separate “Keyword Arguments” section, rendered
+in the same fashion as “Parameters” section (type links created if
+possible)</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference internal" href="#TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_use_param" title="TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_use_param"><code class="xref py py-attr docutils literal notranslate"><span class="pre">napoleon_use_param</span></code></a></p>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a> (Defaults to True)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_use_rtype">
+<code class="sig-name descname">napoleon_use_rtype</code><a class="headerlink" href="#TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_use_rtype" title="Permalink to this definition">¶</a></dt>
+<dd><p>True to use the <code class="docutils literal notranslate"><span class="pre">:rtype:</span></code> role for the return type. False to output
+the return type inline with the description.</p>
+<p>This <a class="reference external" href="https://github.com/numpy/numpy/blob/master/doc/HOWTO_DOCUMENT.rst.txt">NumPy style</a> snippet will be converted as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Returns</span>
+<span class="o">-------</span>
+<span class="nb">bool</span>
+    <span class="kc">True</span> <span class="k">if</span> <span class="n">successful</span><span class="p">,</span> <span class="kc">False</span> <span class="n">otherwise</span>
+</pre></div>
+</div>
+<p><strong>If True</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">returns</span><span class="p">:</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">successful</span><span class="p">,</span> <span class="kc">False</span> <span class="n">otherwise</span>
+<span class="p">:</span><span class="n">rtype</span><span class="p">:</span> <span class="nb">bool</span>
+</pre></div>
+</div>
+<p><strong>If False</strong>:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="p">:</span><span class="n">returns</span><span class="p">:</span> <span class="o">*</span><span class="nb">bool</span><span class="o">*</span> <span class="o">--</span> <span class="kc">True</span> <span class="k">if</span> <span class="n">successful</span><span class="p">,</span> <span class="kc">False</span> <span class="n">otherwise</span>
+</pre></div>
+</div>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/functions.html#bool" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">bool</span></code></a> (Defaults to True)</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="attribute">
+<dt id="TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_custom_sections">
+<code class="sig-name descname">napoleon_custom_sections</code><a class="headerlink" href="#TEMPLATE.sphinxcontrib.napoleon.Config.napoleon_custom_sections" title="Permalink to this definition">¶</a></dt>
+<dd><p>Add a list of custom sections to include, expanding the list of parsed sections.</p>
+<dl class="simple">
+<dt>The entries can either be strings or tuples, depending on the intention:</dt><dd><ul class="simple">
+<li><p>To create a custom “generic” section, just pass a string.</p></li>
+<li><p>To create an alias for an existing section, pass a tuple containing the
+alias name and the original, in that order.</p></li>
+</ul>
+</dd>
+</dl>
+<p>If an entry is just a string, it is interpreted as a header for a generic
+section. If the entry is a tuple/list/indexed container, the first entry
+is the name of the section, the second is the section key to emulate.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#list" title="(in Python v3.8)"><code class="xref py py-obj docutils literal notranslate"><span class="pre">list</span></code></a> (Defaults to None)</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<dl class="function">
+<dt id="TEMPLATE.sphinxcontrib.napoleon.setup">
+<code class="sig-prename descclassname">TEMPLATE.sphinxcontrib.napoleon.</code><code class="sig-name descname">setup</code><span class="sig-paren">(</span><em class="sig-param">app</em><span class="sig-paren">)</span><a class="headerlink" href="#TEMPLATE.sphinxcontrib.napoleon.setup" title="Permalink to this definition">¶</a></dt>
+<dd><p>Sphinx extension setup function.</p>
+<p>When the extension is loaded, Sphinx imports this module and executes
+the <code class="docutils literal notranslate"><span class="pre">setup()</span></code> function, which in turn notifies Sphinx of everything
+the extension offers.</p>
+<div class="admonition seealso">
+<p class="admonition-title">See also</p>
+<p><a class="reference external" href="http://sphinx-doc.org/extensions.html">The Sphinx documentation on Extensions</a></p>
+<p><a class="reference external" href="http://sphinx-doc.org/extdev/tutorial.html">The Extension Tutorial</a></p>
+<p><a class="reference external" href="http://sphinx-doc.org/extdev/appapi.html">The Extension API</a></p>
+</div>
+</dd></dl>
+
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="sample.html" class="btn btn-neutral float-left" title="Markdown File" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2020-2020, TEMPLATE Developers
+      <span class="lastupdated">
+        Last updated on 2020-07-26.
+      </span>
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
