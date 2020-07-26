@@ -51,7 +51,7 @@ jobs:
 
 
       - name: Trigger RTDs build
-        uses: ./
+        uses: actions/checkout@v2
         with:
           webhook_url: ${{ secrets.RTDS_WEBHOOK_URL }}
           webhook_token: ${{ secrets.RTDS_WEBHOOK_TOKEN }}
