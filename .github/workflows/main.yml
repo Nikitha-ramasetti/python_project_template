@@ -61,8 +61,24 @@ jobs:
 
 
 
-      - name: Execute script to build our documentation and update pages
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: build/html
-        shell: bash -l {0}
+# Publish built docs to gh-pages branch.
+    # ===============================
+      - name: Commit documentation changes
+        run: |
+          git clone https://github.com/Nikitha-ramasetti/python_project_template.git --branch gh-pages --single-branch gh-pages
+          cp -r docs/_build/html/* gh-pages/
+          cd gh-pages
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "Update documentation" -a || true
+        # The above command will fail if no changes were present, so we ignore
+        # that.
+      - name: Push changes
+        uses: ad-m/github-push-action@v1
+        with:
+          branch: gh-pages
+          directory: gh-pages
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+
+    # ===============================
