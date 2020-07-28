@@ -76,7 +76,7 @@ jobs:
         # The above command will fail if no changes were present, so we ignore
         # that.
       - name: Push changes
-        uses: ad-m/github-push-action@v1
+        uses: ad-m/github-push-action@v3
         with:
           branch: gh-pages
           directory: gh-pages
