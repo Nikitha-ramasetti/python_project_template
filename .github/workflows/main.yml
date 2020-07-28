@@ -51,10 +51,26 @@ jobs:
 
 
   # https://github.com/peaceiris/actions-gh-pages
-      - name: Deploy
-        if: success()
-        uses: peaceiris/actions-gh-pages@v3
-        with:
-          publish_branch: gh-pages
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: build/html/
+      #- name: Deploy
+       # if: success()
+        #uses: peaceiris/actions-gh-pages@v3
+        #with:
+         # publish_branch: gh-pages
+          #github_token: ${{ secrets.GITHUB_TOKEN }}
+          #publish_dir: build/html/
+
+
+      - name: Prereqs
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          apt-get update
+          apt-get install -y git
+          git clone --depth 1 "https://token:${GITHUB_TOKEN}@github.com/${GITHUB_REPOSITORY}.git" .
+        shell: bash -l {0}
+
+      - name: Execute script to build our documentation and update pages
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: "build/buildDocs.sh"
+        shell: bash -l {0}
