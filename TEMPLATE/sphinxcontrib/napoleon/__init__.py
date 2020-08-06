@@ -276,7 +276,6 @@ class Config:
 
 
 def setup(app):
-    # type: (Sphinx) -> Dict[unicode, Any]
     """Sphinx extension setup function.
 
     When the extension is loaded, Sphinx imports this module and executes

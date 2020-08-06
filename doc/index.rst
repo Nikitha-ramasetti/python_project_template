@@ -9,7 +9,18 @@ TEMPLATE: TODO description
    helloworld
    sample
    sphinxcontrib.napoleon
-   abc.rst
+
+
+.. autosummary::
+   :toctree: _autosummary
+   :caption: Reference
+   :template: custom-module-template.rst
+   :recursive:
+
+   mytoolbox
+
+
+
 
 
 License
