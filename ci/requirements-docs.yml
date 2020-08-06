@@ -9,7 +9,7 @@ dependencies:
   - sphinxcontrib-napoleon
   - recommonmark
   - sphinx-autodoc-typehints
-  - sphinx-autosummary
+
 
 
   # TODO: add any dependencies needed to import the project modules
