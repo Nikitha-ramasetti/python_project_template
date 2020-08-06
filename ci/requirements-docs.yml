@@ -9,6 +9,7 @@ dependencies:
   - sphinxcontrib-napoleon
   - recommonmark
   - sphinx-autodoc-typehints
+  - sphinx-autosummary-recursive
 
 
 
