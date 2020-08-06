@@ -8,8 +8,8 @@ dependencies:
   - pydata-sphinx-theme
   - sphinxcontrib-napoleon
   - recommonmark
-  - sphinx-autodoc-typehints
-  - sphinx-autosummary-recursive
+
+
 
 
 
