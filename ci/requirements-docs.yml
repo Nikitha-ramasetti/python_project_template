@@ -8,6 +8,7 @@ dependencies:
   - pydata-sphinx-theme
   - sphinxcontrib-napoleon
   - recommonmark
+  - sphinx-autodoc-typehints
 
 
   # TODO: add any dependencies needed to import the project modules
