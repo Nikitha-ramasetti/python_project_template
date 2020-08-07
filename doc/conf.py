@@ -22,6 +22,8 @@ print("sys.path:", sys.path)
 print("TEMPLATE version: ", TEMPLATE.__version__)
 
 sys.path.insert(0, os.path.abspath(".."))
+
+
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
