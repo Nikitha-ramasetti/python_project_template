@@ -11,7 +11,6 @@ TEMPLATE: TODO description
    sphinxcontrib.napoleon
 
 
-
 .. autosummary::
    :toctree: _autosummary
    :caption: Reference
