@@ -9,6 +9,7 @@ dependencies:
   - sphinxcontrib-napoleon
   - recommonmark
   - nbsphinx
+  - jupyter_client
 
 
 
