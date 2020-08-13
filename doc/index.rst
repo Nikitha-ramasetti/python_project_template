@@ -9,6 +9,7 @@ TEMPLATE: TODO description
    helloworld
    sample
    sphinxcontrib.napoleon
+   code-cells
 
 
 .. autosummary::

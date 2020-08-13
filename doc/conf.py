@@ -34,6 +34,7 @@ sys.path.insert(0, os.path.abspath(".."))
 # ones.
 extensions = [
     "recommonmark",
+    "nbsphinx",
     "sphinxcontrib.napoleon",
     "sphinx.ext.autodoc",
     "sphinx.ext.coverage",
