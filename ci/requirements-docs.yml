@@ -10,6 +10,11 @@ dependencies:
   - recommonmark
   - nbsphinx
   - jupyter_client
+  - conda-forge::nb_conda_kernels=2.1.0
+  - ipykernel=4.5.2
+  - ipywidgets=6.0.0
+  - nbconvert=5.1.1
+  - notebook=5.0.0
 
 
 
