@@ -23,7 +23,8 @@ print("TEMPLATE version: ", TEMPLATE.__version__)
 
 sys.path.insert(0, os.path.abspath(".."))
 
-nbsphinx_execute = "never"
+# nbsphinx_execute = "never"
+nbsphinx_kernel_name = "python3"
 
 # -- General configuration ------------------------------------------------
 
