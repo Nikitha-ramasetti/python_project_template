@@ -23,6 +23,7 @@ print("TEMPLATE version: ", TEMPLATE.__version__)
 
 sys.path.insert(0, os.path.abspath(".."))
 
+nbsphinx_execute = "never"
 
 # -- General configuration ------------------------------------------------
 
