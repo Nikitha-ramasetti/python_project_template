@@ -10,7 +10,7 @@ dependencies:
   - recommonmark
   - nbsphinx
   - jupyter_client
-  - nbsphinx_kernel_name = "python3"
+
 
 
 
